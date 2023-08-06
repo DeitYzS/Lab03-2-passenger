@@ -6,15 +6,16 @@
 </template>
 
 <script setup lang="ts">
-import type { StudentItem } from '@/type'
-import StudentCard from '@/components/StudentCard.vue'
+import type { PassengerItem } from '@/type'
+import StudentCard from '@/components/PassengerCard.vue'
 import { ref, type Ref } from 'vue'
-import StuedntService from '@/services/StudentService'
+import PassengerService from '@/services/PassengerService';
 
-const students: Ref<Array<StudentItem>> = ref([])
-StuedntService.getEvent().then((res) => {
+const students: Ref<Array<PassengerItem>> = ref([])
+PassengerService.getEvent().then((res) => {
   students.value = res.data
 })
 </script>
 
 <style scoped></style>
+@/services/PassengerService

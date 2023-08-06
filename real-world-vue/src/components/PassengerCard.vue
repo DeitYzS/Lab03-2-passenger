@@ -1,21 +1,20 @@
 
 <template>
-  <div class="event-class">
-    <div class="event-card">
-      <!-- <EventOrganizer></EventOrganizer> -->
-      <span>@ {{ event?.time }} on {{ event?.date }}</span>
-      <h4>{{ event?.title }}</h4>
+  <div class="passenger-class">
+    <div class="passenger-card">
+      <span> {{ passenger?.first_name }}  {{ passenger?.last_name }}</span>
+      <h4>{{ passenger?.gender }}</h4>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { EventItem } from '@/type'
+import type { PassengerItem } from '@/type'
 import type { PropType } from 'vue'
 
 defineProps({
-  event: {
-    type: Object as PropType<EventItem>,
+  passenger: {
+    type: Object as PropType<PassengerItem>,
     require: true
   }
 })
@@ -23,7 +22,7 @@ defineProps({
 
 
 <style scoped>
-.event-card {
+.passenger-card {
   padding: 20px;
   width: 250px;
   cursor: pointer;
@@ -31,7 +30,7 @@ defineProps({
   margin-bottom: 18px;
 }
 
-.event-card:hover {
+.passenger-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12 px 0 rgba(0, 0, 0, 0.2);
 }

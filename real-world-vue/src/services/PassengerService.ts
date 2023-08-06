@@ -1,9 +1,9 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosResponse } from 'axios'
-import type { StudentItem } from '@/type'
+import type { PassengerItem } from '@/type'
 
 const apiClientStudent: AxiosInstance = axios.create({
-  baseURL: 'https://dv-student-backend-2019.appspot.com',
+  baseURL: 'https://my-json-server.typicode.com/se331-2022/passengerdb',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -13,7 +13,7 @@ const apiClientStudent: AxiosInstance = axios.create({
 
 
 export default {
-    getEvent(): Promise<AxiosResponse<StudentItem[]>>{
-      return apiClientStudent.get<StudentItem>('/students')
+    getEvent(): Promise<AxiosResponse<PassengerItem[]>>{
+      return apiClientStudent.get<PassengerItem>('/passenger')
     }
 }
